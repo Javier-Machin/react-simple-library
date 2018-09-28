@@ -1,4 +1,55 @@
-.App {
+html, body {
+  width: 100%;
+  margin: 0;
+}
+
+button {
+  border: 1px solid black;
+  border-radius: 2px;
+  background: white;
+  cursor: pointer;
+}
+
+.main-container {
+  width: 50%;
+  min-width: 960px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.book-form {
+  border: 1px solid black;
+  border-radius: 2px;
+  height: 260px;
+  width: 20%;
+  padding: 10px 10px 0 10px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.book-form input {
+  margin: 5px 0;
+}
+
+.books-container {
+  border: 1px solid black;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.book {
+  font-weight: bold;
+  padding: 12px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.book button {
+  margin: 0 5px;
+}
+
+/*.App {
   text-align: center;
 }
 
@@ -26,3 +77,4 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+*/
