@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import storageManager from '../modules/storageManager';
+import BookList from './BookList';
 
 class BookForm extends Component {
   constructor(props) {
@@ -7,11 +9,14 @@ class BookForm extends Component {
       title: '',
       author: '',
       pages: 10,
-      read: "yes"
+      read: "yes",
+      books: storageManager.getBooks()
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    console.log(this.state.books);
   }
 
   handleChange(event) {
@@ -19,29 +24,22 @@ class BookForm extends Component {
   }
 
   handleSubmit(event) {
-    const newBook = new Book(
-      this.state.title, 
-      this.state.author, 
-      this.state.pages, 
-      this.state.read
-    );
+    const newBook = {
+      title: this.state.title, 
+      author: this.state.author, 
+      pages: this.state.pages, 
+      read: this.state.read
+    };
     
-    const books = [newBook];
-    
-    alert(
-      `
-       Title: ${books[0].title} 
-       Author: ${books[0].author} 
-       Pages: ${books[0].pages} 
-       Read: ${books[0].read}
-      ` 
-    );
+    storageManager.addBook(newBook);
+    this.setState({books: storageManager.getBooks()})
     
     event.preventDefault();
   }
 
   render() {
     return (
+      <div>
       <form className="book-form" onSubmit={this.handleSubmit}>
         <label>Title:</label><br />
         <input type="text" 
@@ -88,21 +86,10 @@ class BookForm extends Component {
         
         <input type="submit" value="Submit" />
       </form>
+      <BookList books={this.state.books} />
+      </div>
     );
   }
 }
-
-// Transform to component ?
-class Book {
-  constructor(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-  }
-
-  toggleRead() { this.read === "true" ? this.read = "false" : this.read = "true" }
-}
-
 
 export default BookForm
