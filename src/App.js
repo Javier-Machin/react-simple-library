@@ -32,9 +32,10 @@ class App extends Component {
         pages: pages, 
         read: read
       };
+
       console.log(newBook);
       storageManager.addBook(newBook);
-      this.setState({books: storageManager.getBooks()})
+      this.setState({books: storageManager.getBooks()});
     } 
   }
 

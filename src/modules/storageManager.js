@@ -18,7 +18,7 @@ const storageManager = (() => {
     if (localStorage.getItem("books")) {
       return JSON.parse(localStorage.getItem("books"));
     } else {
-      const quijote = {title: "quijote", author: "kek", pages: 200, read: "no"};
+      const quijote = {title: "Quijote", author: "Cervantes", pages: 200, read: "no"};
       return [quijote]
     }
   }
