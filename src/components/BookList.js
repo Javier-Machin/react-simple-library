@@ -6,7 +6,7 @@ class BookList extends Component {
     return (
       <ul>
         { this.props.books.map(book => (
-          <li key={book.title}>
+          <li key={book.title + " " + book.author}>
             Title: {book.title}&nbsp; 
             Author: {book.author}&nbsp;  
             Pages: {book.pages}&nbsp;   

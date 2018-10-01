@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import storageManager from '../modules/storageManager';
-import BookList from './BookList';
 
 class BookForm extends Component {
   constructor(props) {
@@ -9,38 +7,22 @@ class BookForm extends Component {
       title: '',
       author: '',
       pages: 10,
-      read: "yes",
-      books: storageManager.getBooks()
+      read: "yes"
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-
-    console.log(this.state.books);
   }
 
   handleChange(event) {
     this.setState({[event.target.name]: event.target.value});
   }
 
-  handleSubmit(event) {
-    const newBook = {
-      title: this.state.title, 
-      author: this.state.author, 
-      pages: this.state.pages, 
-      read: this.state.read
-    };
-    
-    storageManager.addBook(newBook);
-    this.setState({books: storageManager.getBooks()})
-    
-    event.preventDefault();
-  }
-
   render() {
     return (
       <div>
-      <form className="book-form" onSubmit={this.handleSubmit}>
+      <form className="book-form" onSubmit={
+        this.props.handleBookCreate(this.state.title, this.state.author, this.state.pages, this.state.read)
+      }>
         <label>Title:</label><br />
         <input type="text" 
                name="title" 
@@ -86,7 +68,7 @@ class BookForm extends Component {
         
         <input type="submit" value="Submit" />
       </form>
-      <BookList books={this.state.books} />
+      
       </div>
     );
   }
