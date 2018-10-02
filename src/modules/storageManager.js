@@ -10,6 +10,12 @@ const storageManager = (() => {
     saveLocalStorage();
   }
 
+  function deleteBook(index) {
+    books.splice(index, 1);
+
+    saveLocalStorage();
+  }
+
   function saveLocalStorage() {
     localStorage.setItem("books", JSON.stringify(books));
   }
@@ -23,7 +29,7 @@ const storageManager = (() => {
     }
   }
 
-  return { addBook, getBooks }
+  return { addBook, deleteBook, getBooks }
 
 })();
 

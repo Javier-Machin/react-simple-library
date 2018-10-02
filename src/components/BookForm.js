@@ -18,15 +18,12 @@ class BookForm extends Component {
   }
 
   render() {
+    const { title, author, pages, read } = this.state;
+    
     return (
       <div>
       <form className="book-form" onSubmit={
-        this.props.handleBookCreate(
-          this.state.title, 
-          this.state.author, 
-          this.state.pages, 
-          this.state.read
-        )
+        this.props.handleBookCreate(title, author, pages, read)
       }>
         <label>Title:</label><br />
         <input type="text" 

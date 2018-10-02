@@ -11,20 +11,21 @@ class App extends Component {
     this.state = { books: storageManager.getBooks() };
 
     this.handleBookCreate = this.handleBookCreate.bind(this);
+    this.handleBookDelete = this.handleBookDelete.bind(this);
   }
 
   render() {
     return (
       <section className="main-container">
         <BookForm handleBookCreate={this.handleBookCreate} />
-        <BookList books={this.state.books} />
+        <BookList handleBookDelete={this.handleBookDelete} books={this.state.books} />
       </section>
     );
   }
 
   handleBookCreate(title, author, pages, read) {
     return event => {
-      event.preventDefault()
+      event.preventDefault();
       
       const newBook = {
         title: title, 
@@ -33,10 +34,16 @@ class App extends Component {
         read: read
       };
 
-      console.log(newBook);
       storageManager.addBook(newBook);
       this.setState({books: storageManager.getBooks()});
     } 
+  }
+
+  handleBookDelete(bookIndex) {
+    return () => {
+      storageManager.deleteBook(bookIndex);
+      this.setState({books: storageManager.getBooks()});
+    }
   }
 
 }
