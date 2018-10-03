@@ -12,13 +12,27 @@ class App extends Component {
 
     this.handleBookCreate = this.handleBookCreate.bind(this);
     this.handleBookDelete = this.handleBookDelete.bind(this);
+    this.handleBookReadToggle = this.handleBookReadToggle.bind(this);
   }
 
   render() {
     return (
       <section className="main-container">
-        <BookForm handleBookCreate={this.handleBookCreate} />
-        <BookList handleBookDelete={this.handleBookDelete} books={this.state.books} />
+        <BookForm handleBookCreate={this.handleBookCreate} className="newbook__form" />
+        <div className="newbook">
+          <input type="checkbox" className="newbook__checkbox" id="navi-toggle" />
+
+          <label htmlFor="navi-toggle" className="newbook__button">
+            <span className="newbook__icon">&nbsp;</span>
+          </label>
+
+          <div className="newbook__background">&nbsp;</div>
+        </div>
+        <BookList 
+          handleBookDelete={this.handleBookDelete} 
+          handleBookReadToggle={this.handleBookReadToggle}
+          books={this.state.books} 
+        />
       </section>
     );
   }
@@ -39,9 +53,16 @@ class App extends Component {
     } 
   }
 
-  handleBookDelete(bookIndex) {
+  handleBookDelete(index) {
     return () => {
-      storageManager.deleteBook(bookIndex);
+      storageManager.deleteBook(index);
+      this.setState({books: storageManager.getBooks()});
+    }
+  }
+
+  handleBookReadToggle(index) {
+    return () => {
+      storageManager.toggleReadBook(index);
       this.setState({books: storageManager.getBooks()});
     }
   }

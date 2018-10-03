@@ -11,6 +11,7 @@ class BookList extends Component {
             Author: {book.author}&nbsp;  
             Pages: {book.pages}&nbsp;   
             Read: {book.read}&nbsp;
+            <button onClick={this.props.handleBookReadToggle(index)}>Toggle Read</button>
             <button onClick={this.props.handleBookDelete(index)}>Delete Book</button> 
           </li> 
           ))}

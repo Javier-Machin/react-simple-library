@@ -1,6 +1,7 @@
 const storageManager = (() => {
   const localStorage = window.localStorage;
-  let books = loadLocalStorage();
+  const books = loadLocalStorage();
+  
   const getBooks = () => books;
 
   function addBook(book) {
@@ -12,6 +13,12 @@ const storageManager = (() => {
 
   function deleteBook(index) {
     books.splice(index, 1);
+
+    saveLocalStorage();
+  }
+
+  function toggleReadBook(index) {
+    books[index].read === "yes" ? books[index].read = "no" : books[index].read = "yes";
 
     saveLocalStorage();
   }
@@ -29,7 +36,7 @@ const storageManager = (() => {
     }
   }
 
-  return { addBook, deleteBook, getBooks }
+  return { addBook, deleteBook, toggleReadBook, getBooks }
 
 })();
 
