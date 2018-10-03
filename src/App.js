@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <section className="main-container">
-        <BookForm handleBookCreate={this.handleBookCreate} className="newbook__form" />
+        
         <div className="newbook">
           <input type="checkbox" className="newbook__checkbox" id="navi-toggle" />
 
@@ -27,6 +27,17 @@ class App extends Component {
           </label>
 
           <div className="newbook__background">&nbsp;</div>
+
+          <nav className="newbook__nav">
+            <ul className="newbook__list">
+              <BookForm handleBookCreate={this.handleBookCreate} className="newbook__form" />
+              <li className="newbook__item"><a href="" className="newbook__link"><span>01</span>About Natours</a></li>
+              <li className="newbook__item"><a href="" className="newbook__link"><span>02</span>Your benefits</a></li>
+              <li className="newbook__item"><a href="" className="newbook__link"><span>03</span>Popular tours</a></li>
+              <li className="newbook__item"><a href="" className="newbook__link"><span>04</span>Stories</a></li>
+              <li className="newbook__item"><a href="" className="newbook__link"><span>05</span>Book now</a></li> 
+            </ul>
+          </nav>
         </div>
         <BookList 
           handleBookDelete={this.handleBookDelete} 

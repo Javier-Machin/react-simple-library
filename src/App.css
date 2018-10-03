@@ -62,32 +62,143 @@ button {
   margin: 0 5px;
 }
 
-/*.App {
+.newbook__checkbox {
+  display: none;
+}
+
+.newbook__button {
+  background-color: $color-white;
+  height: 7rem;
+  width: 7rem;
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  border-radius: 50%;
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem rgba($color-black, .1);
   text-align: center;
+  cursor: pointer;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.newbook__background {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  background-image: radial-gradient(blue, pink);
+  z-index: 1000;
+  transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.newbook__nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+
+  width: 0;
+  opacity: 0;
+  transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.newbook__list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+  width: 100%;
+}
+
+.newbook__item {
+  margin: 1rem;
+}
+
+.newbook__link:link,
+.newbook__link:visited {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
   color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+  background-size: 240%;
+  transition: all .4s;
 }
 
-.App-title {
-  font-size: 1.5em;
+.newbook__link:visited span {
+  margin-right: 1.5rem;
+  display: inline-block;
 }
 
-.App-intro {
-  font-size: large;
+.newbook__link:hover,
+.newbook__link:active {
+  background-position: 100%;
+  color: orangered;
+  transform: translateX(1rem);
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/*FUNCTIONALITY*/
+
+.newbook__checkbox:checked ~ .newbook__background {
+  transform: scale(80);
 }
-*/
+
+.newbook__checkbox:checked ~ .newbook__nav {
+  opacity: 1;
+  width: 100%;
+}
+
+  /*ICON*/
+.newbook__icon {
+  position: relative;
+  margin-top: 3.5rem;
+}
+.newbook__icon,
+.newbook__icon::before,
+.newbook__icon::after {
+  width: 3rem;
+  height: 2px;
+  background-color: grey;
+  display: inline-block;
+}
+
+.newbook__icon::before,
+.newbook__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all .2s;
+}
+
+.newbook__icon::before { top: -.8rem; }
+.newbook__icon::after { top: .8rem; }
+
+
+.newbook__button:hover .newbook__icon::before {
+  top: -1rem;
+}
+
+.newbook__button:hover .newbook__icon::after {
+  top: 1rem;
+}
+
+.newbook__checkbox:checked + .newbook__button .newbook__icon {
+  background-color: transparent;
+}
+
+.newbook__checkbox:checked + .newbook__button .newbook__icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.newbook__checkbox:checked + .newbook__button .newbook__icon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
