@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import storageManager from './modules/storageManager';
-import BookForm from './components/BookForm';
+import BookNewModal from './components/BookNewModal';
 import BookList from './components/BookList';
 import './App.css';
 
@@ -19,26 +19,7 @@ class App extends Component {
     return (
       <section className="main-container">
         
-        <div className="newbook">
-          <input type="checkbox" className="newbook__checkbox" id="navi-toggle" />
-
-          <label htmlFor="navi-toggle" className="newbook__button">
-            <span className="newbook__icon">&nbsp;</span>
-          </label>
-
-          <div className="newbook__background">&nbsp;</div>
-
-          <nav className="newbook__nav">
-            <ul className="newbook__list">
-              <BookForm handleBookCreate={this.handleBookCreate} className="newbook__form" />
-              <li className="newbook__item"><a href="" className="newbook__link"><span>01</span>About Natours</a></li>
-              <li className="newbook__item"><a href="" className="newbook__link"><span>02</span>Your benefits</a></li>
-              <li className="newbook__item"><a href="" className="newbook__link"><span>03</span>Popular tours</a></li>
-              <li className="newbook__item"><a href="" className="newbook__link"><span>04</span>Stories</a></li>
-              <li className="newbook__item"><a href="" className="newbook__link"><span>05</span>Book now</a></li> 
-            </ul>
-          </nav>
-        </div>
+        <BookNewModal handleBookCreate={this.handleBookCreate} />
         <BookList 
           handleBookDelete={this.handleBookDelete} 
           handleBookReadToggle={this.handleBookReadToggle}

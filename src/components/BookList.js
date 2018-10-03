@@ -4,18 +4,18 @@ class BookList extends Component {
 
   render() { 
     return (
-      <ul>
+      <div>
         { this.props.books.map((book, index) => (
-          <li key={book.title}>
+          <p key={book.title}>
             Title: {book.title}&nbsp; 
             Author: {book.author}&nbsp;  
             Pages: {book.pages}&nbsp;   
             Read: {book.read}&nbsp;
             <button onClick={this.props.handleBookReadToggle(index)}>Toggle Read</button>
-            <button onClick={this.props.handleBookDelete(index)}>Delete Book</button> 
-          </li> 
+            <button onClick={this.props.handleBookDelete(index)}>Delete Book</button>
+          </p> 
           ))}
-      </ul>
+      </div>
     );
   }
 

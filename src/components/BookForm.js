@@ -21,13 +21,13 @@ class BookForm extends Component {
     const { title, author, pages, read } = this.state;
     
     return (
-      <div>
-      <form className="book-form" onSubmit={
+      <form className="newbook__form" onSubmit={
         this.props.handleBookCreate(title, author, pages, read)
       }>
         <label>Title:</label><br />
         <input type="text" 
                name="title" 
+               className="newbook__form-input"
                id="form-title" 
                value={this.state.name} 
                onChange={this.handleChange} 
@@ -35,7 +35,8 @@ class BookForm extends Component {
         
         <label>Author:</label><br />
         <input type="text" 
-               name="author" 
+               name="author"
+               className="newbook__form-input" 
                id="form-author" 
                value={this.state.author} 
                onChange={this.handleChange} 
@@ -43,7 +44,8 @@ class BookForm extends Component {
         
         <label>Pages:</label><br />
         <input type="number" 
-               name="pages" 
+               name="pages"
+               className="newbook__form-input" 
                id="form-pages" 
                value={this.state.pages} 
                onChange={this.handleChange} 
@@ -70,8 +72,6 @@ class BookForm extends Component {
         
         <input type="submit" value="Submit" />
       </form>
-      
-      </div>
     );
   }
 }
