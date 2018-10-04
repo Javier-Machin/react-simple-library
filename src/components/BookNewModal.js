@@ -6,9 +6,9 @@ class BookNewModal extends Component {
   render() { 
     return (
       <div className="newbook">
-        <input type="checkbox" className="newbook__checkbox" id="navi-toggle" />
+        <input type="checkbox" className="newbook__checkbox" id="modal-toggle" />
 
-        <label htmlFor="navi-toggle" className="newbook__button">
+        <label htmlFor="modal-toggle" className="newbook__button">
           <span className="newbook__icon">&nbsp;</span>
         </label>
 

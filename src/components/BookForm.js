@@ -24,6 +24,11 @@ class BookForm extends Component {
       <form className="newbook__form" onSubmit={
         this.props.handleBookCreate(title, author, pages, read)
       }>
+        <div>
+          <h2 className="newbook__form-header">
+            Add new book
+          </h2>
+        </div>
         <label>Title:</label><br />
         <input type="text" 
                name="title" 
@@ -31,7 +36,7 @@ class BookForm extends Component {
                id="form-title" 
                value={this.state.name} 
                onChange={this.handleChange} 
-               maxLength="15" /><br />
+               maxLength="25" /><br />
         
         <label>Author:</label><br />
         <input type="text" 
@@ -52,25 +57,33 @@ class BookForm extends Component {
                min="10" 
                max="9999" /><br />
         
-        <label>Read:</label><br />
+        <label className="newbook__form-radio-header">already read:</label><br />
         
         <input type="radio" 
                id="readYes" 
-               value="yes" 
+               value="yes"
+               className="newbook__form-radio" 
                checked={this.state.read === 'yes'} 
                onChange={this.handleChange} 
                name="read" />
-        <label htmlFor="readYes">Yes</label><br />
-        
+        <label className="newbook__form-radio-label--yes" htmlFor="readYes">
+          <span className="newbook__form-radio-btn--yes"></span>
+          Yes
+        </label>
+
         <input type="radio" 
                id="readNo" 
                value="no" 
+               className="newbook__form-radio"
                checked={this.state.read === 'no'} 
                onChange={this.handleChange} 
                name="read" />
-        <label htmlFor="readNo">No</label><br /><br />
+        <label className="newbook__form-radio-label--no" htmlFor="readNo">
+        <span className="newbook__form-radio-btn--no"></span>
+          No
+        </label>
         
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" className="newbook__form-btn" />
       </form>
     );
   }
