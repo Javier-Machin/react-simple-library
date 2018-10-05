@@ -117,10 +117,15 @@ button {
   transition: all .3s;
 }
 
+.newbook__form-input:invalid {
+  box-shadow: none;
+}
+
 .newbook__form-input:focus {
   outline: none;
   box-shadow: 0 1rem 2rem rgba(rgba(0,0,0,.6), .1);
   border-bottom: 3px solid rgb(75,25,255);
+  border-radius: 4px 4px 0 0;
 }
 
 .newbook__form-input:focus:invalid {
@@ -133,6 +138,14 @@ button {
   letter-spacing: .2rem;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+.newbook__form-input:not(:placeholder-shown) {
+  border-radius: 4px 4px 0 0;
+}
+
+.newbook__form-input:invalid:not(:placeholder-shown) {
+  border-bottom: 3px solid rgba(255,50,180,.9);
 }
 
 .newbook__form-label {
@@ -304,10 +317,14 @@ button {
   transition: opacity .2s;
 }
 
-.newbook__form-radio#readYes:checked ~ .newbook__form-radio-label--yes .newbook__form-radio-btn--yes::after {
+.newbook__form-radio#readYes:checked ~ 
+.newbook__form-radio-label--yes 
+.newbook__form-radio-btn--yes::after {
   opacity: 1;
 }
 
-.newbook__form-radio#readNo:checked ~ .newbook__form-radio-label--no .newbook__form-radio-btn--no::after {
+.newbook__form-radio#readNo:checked ~ 
+.newbook__form-radio-label--no 
+.newbook__form-radio-btn--no::after {
   opacity: 1;
 }
