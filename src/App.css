@@ -94,16 +94,16 @@ button {
   border-radius: 4px;
   text-align: left;
   background-color: rgb(248,248,248);
-  padding: 5rem 10rem;
+  padding: 5rem 4rem 5rem 10rem;
   box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.35);
 }
 
 .newbook__form-header {
-  color: rgb(75,25,255);
+  color: rgba(75,25,255,.8);
   text-transform: uppercase;
-  font-size: 3.5rem;
-  margin-bottom: 4rem;
-  letter-spacing: .1rem;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: .4rem;
 }
 
 .newbook__form-input {
@@ -112,18 +112,69 @@ button {
   border-radius: 4px;
   font-size: 2rem;
   padding: 1rem 1.5rem;
-  margin-bottom: 3rem;
+  margin-top: 3rem;
+  border-bottom: 3px solid transparent;
+  transition: all .3s;
 }
 
 .newbook__form-input:focus {
   outline: none;
+  box-shadow: 0 1rem 2rem rgba(rgba(0,0,0,.6), .1);
+  border-bottom: 3px solid rgb(75,25,255);
+}
+
+.newbook__form-input:focus:invalid {
+  border-bottom: 3px solid rgba(255,50,180,.9);
+}
+
+.newbook__form-input::-webkit-input-placeholder {
+  color: rgba(0,0,0,.4);
+  font-size: 1.5rem;
+  letter-spacing: .2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.newbook__form-label {
+  position: relative;
+  top: -4rem;
+  font-size: 1.5rem;
+  letter-spacing: .2rem;
+  font-weight: 500;
+  margin-left: 2rem;
+  margin-top: .7rem;
+  display: block;
+  transition: all .3s;
+  display: inline-block;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.4);
+}
+
+.newbook__form-label--1 {
+  left: -8.1rem;
+}
+
+.newbook__form-label--2 {
+  left: -10.4rem;
+}
+
+.newbook__form-label--3 {
+  left: -8.9rem;
+}
+
+.newbook__form-input--1:placeholder-shown ~ .newbook__form-label--1,
+.newbook__form-input--2:placeholder-shown ~ .newbook__form-label--2,
+.newbook__form-input--3:placeholder-shown ~ .newbook__form-label--3 {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(5rem);
 }
 
 .newbook__form-btn {
   font-size: 1.8rem;
   text-decoration: none;
   border: none;
-  background-color:rgb(75,25,255);;
+  background-color: rgba(75,25,255,.8);
   color: white;
   border-radius: 20px;
   padding: 1rem 3rem;
@@ -139,10 +190,6 @@ button {
 .newbook__form-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 1.3rem 3rem rgba(0,0,0,.2);
-}
-.newbook__form-btn::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
 }
 
 .newbook__form-btn:active,
@@ -204,9 +251,10 @@ button {
 
 .newbook__form-radio-header {
   font-size: 2rem;
-  color: rgb(75,25,255);
+  color: rgba(75,25,255,.8);
   text-transform: uppercase;
   letter-spacing: .1rem;
+  margin-right: 3rem;
 }
 
 /* input */
@@ -218,9 +266,10 @@ button {
 .newbook__form-radio-label--no {
   position: relative;
   display: inline-block;
-  font-size: 2rem;
+  font-size: 1.7rem;
+  letter-spacing: .1rem;
   text-transform: uppercase;
-  color: rgba(0,0,0,.6);
+  color: rgba(0,0,0,.4);
   padding-left: 4rem;
   cursor: pointer;
   margin-top: 2.5rem;
@@ -231,7 +280,7 @@ button {
 .newbook__form-radio-btn--no {
   height: 3rem;
   width: 3rem;
-  border: 5px solid rgb(75,25,255);
+  border: 5px solid rgba(75,25,255,.8);;
   border-radius: 50%;
   display: inline-block;
   position: absolute;
@@ -250,7 +299,7 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(75,25,255);
+  background-color: rgba(255,50,180,.8);
   opacity: 0;
   transition: opacity .2s;
 }

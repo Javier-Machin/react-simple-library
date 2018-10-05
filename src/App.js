@@ -29,20 +29,20 @@ class App extends Component {
     );
   }
 
-  handleBookCreate(title, author, pages, read) {
-    return event => {
-      event.preventDefault();
-      
-      const newBook = {
-        title: title, 
-        author: author, 
-        pages: pages, 
-        read: read
-      };
+  handleBookCreate(event, title, author, pages, read) {
+    event.preventDefault();
+    
+    const newBook = {
+      title: title, 
+      author: author, 
+      pages: pages, 
+      read: read
+    };
 
-      storageManager.addBook(newBook);
-      this.setState({books: storageManager.getBooks()});
-    } 
+    storageManager.addBook(newBook);
+    this.setState({books: storageManager.getBooks()});
+
+    document.getElementById("modal-toggle").checked = false;
   }
 
   handleBookDelete(index) {
