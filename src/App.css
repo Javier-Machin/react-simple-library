@@ -217,15 +217,15 @@ body {
 
 @media only screen and (max-width: 900px) {
   .newbook__form-container {
-    top: 0;
+    top: 1rem;
   }
 }
 
 /* FUNCTIONALITY */
 
 .newbook__checkbox:checked ~ .newbook__background {
-  -webkit-transform: scale(105);
-          transform: scale(105);
+  -webkit-transform: scale(99);
+          transform: scale(99);
 }
 
 .newbook__checkbox:checked ~ .newbook__form-container {
@@ -468,7 +468,17 @@ body {
 
 @media only screen and (max-width: 835px) {
   .newbook__form-btn {
-    margin-top: 4rem;
+    margin-top: 3.5rem;
+  }
+}
+
+@media only screen and (max-width: 685px) {
+  .newbook__form-btn {
+    position: relative;
+    display: inline-block;
+    margin-top: 0rem;
+    bottom: 4.4rem;
+    left: 22rem;
   }
 }
 
@@ -490,8 +500,7 @@ body {
 
 @media only screen and (max-width: 835px) {
   .newbook__form {
-    width: 70%;
-    padding: 2rem 4rem 5rem 10rem;
+    padding: 2rem 2rem 5rem 10rem;
   }
 
   .newbook__form-header {
@@ -499,37 +508,33 @@ body {
   }
 
   .newbook__form-input {
-    font-size: 3rem;
-    margin-top: 1rem;
+    font-size: 2.9rem;
+    margin-top: 0.8rem;
   }
 
   .newbook__form-input::-webkit-input-placeholder {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
 
   .newbook__form-radio-label--yes,
   .newbook__form-radio-label--no {
-    font-size: 2.7rem;
+    font-size: 2.6rem;
+  }
+
+  .newbook__form-radio-btn--yes::after,
+  .newbook__form-radio-btn--no::after {
+    height: 1.7rem;
+    width: 1.7rem;
   }
 }
 
 @media only screen and (max-width: 685px) {
   .newbook__form {
-    width: 82%;
     min-width: 350px;
-  }
-
-  .newbook__form-input {
-    font-size: 3.9rem;
-  }
-
-  .newbook__form-input::-webkit-input-placeholder {
-    font-size: 3.2rem;
   }
 
   .newbook__form-radio-label--yes,
   .newbook__form-radio-label--no {
-    font-size: 3.1rem;
     display: block;
   }
 }
