@@ -24,12 +24,12 @@ const storageManager = (() => {
   }
 
   function saveLocalStorage() {
-    localStorage.setItem("books", JSON.stringify(books));
+    localStorage.setItem("bookslist", JSON.stringify(books));
   }
 
   function loadLocalStorage() {
-    if (localStorage.getItem("books")) {
-      return JSON.parse(localStorage.getItem("books"));
+    if (localStorage.getItem("bookslist")) {
+      return JSON.parse(localStorage.getItem("bookslist"));
     } else {
       const quixote = {title: "Don Quixote", author: "Miguel de Cervantes", pages: 600, read: "no"};
       const lostTime = {title: "In Search of Lost Time", author: "Marcel Proust", pages: 500, read: "no"};
