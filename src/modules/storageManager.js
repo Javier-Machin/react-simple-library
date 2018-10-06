@@ -31,8 +31,13 @@ const storageManager = (() => {
     if (localStorage.getItem("books")) {
       return JSON.parse(localStorage.getItem("books"));
     } else {
-      const quijote = {title: "Quijote", author: "Cervantes", pages: 200, read: "no"};
-      return [quijote]
+      const quixote = {title: "Don Quixote", author: "Miguel de Cervantes", pages: 600, read: "no"};
+      const lostTime = {title: "In Search of Lost Time", author: "Marcel Proust", pages: 500, read: "no"};
+      const ulysses = {title: "Ulysses", author: "James Joyce", pages: 500, read: "no"};
+      const gatsby = {title: "The Great Gatsby", author: "F.Scott Fitzgerald", pages: 400, read: "no"};
+      const mobyDick = {title: "Moby Dick", author: "Herman Melville", pages: 600, read: "no"};
+      const hamlet = {title: "Hamlet", author: "William Shakespeare", pages: 200, read: "no"};
+      return [quixote, lostTime, ulysses, gatsby, mobyDick, hamlet]
     }
   }
 

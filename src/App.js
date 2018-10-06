@@ -17,15 +17,23 @@ class App extends Component {
 
   render() {
     return (
+      <React.Fragment>
+      <div className="top-bar"></div>
       <section className="main-container">
-        
+      
+        <h1 className="main-header">React Read List</h1>
         <BookNewModal handleBookCreate={this.handleBookCreate} />
         <BookList 
           handleBookDelete={this.handleBookDelete} 
           handleBookReadToggle={this.handleBookReadToggle}
           books={this.state.books} 
         />
+      
       </section>
+      <div className="bottom-bar">
+        <a href="http://www.javiermachin.com">© Javier Machín</a>
+      </div>
+      </React.Fragment>
     );
   }
 
