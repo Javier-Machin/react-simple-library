@@ -9,13 +9,16 @@
     "react-scripts": "1.1.5"
   },
   "devDependencies": {
-    "gh-pages": "^2.0.0"
+    "autoprefixer": "^9.1.5",
+    "gh-pages": "^2.0.0",
+    "postcss-cli": "^6.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' src/App.css -o src/App.css",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   }
