@@ -55,9 +55,10 @@ body {
   html {
     font-size: 40%;
   }
-
+  
   .main-container {
     width: 98%;
+    margin: 45px auto;
   }
 }
 
@@ -289,7 +290,6 @@ body {
   max-width: 800px;
 }
 
-
 .newbook__form-header {
   color: rgba(75,25,255,.8);
   text-transform: uppercase;
@@ -310,11 +310,6 @@ body {
   transition: all .3s;
 }
 
-@media only screen and (max-width: 835px) {
-  .newbook__form-input {
-    font-size: 3rem;
-  }
-}
 
 .newbook__form-input:invalid {
   box-shadow: none;
@@ -471,6 +466,12 @@ body {
   transition: all .2s;
 }
 
+@media only screen and (max-width: 835px) {
+  .newbook__form-btn {
+    margin-top: 4rem;
+  }
+}
+
 .newbook__form-btn:hover {
   -webkit-transform: translateY(-3px);
           transform: translateY(-3px);
@@ -490,10 +491,16 @@ body {
 @media only screen and (max-width: 835px) {
   .newbook__form {
     width: 70%;
+    padding: 2rem 4rem 5rem 10rem;
+  }
+
+  .newbook__form-header {
+    margin-bottom: 1.5rem;
   }
 
   .newbook__form-input {
     font-size: 3rem;
+    margin-top: 1rem;
   }
 
   .newbook__form-input::-webkit-input-placeholder {
@@ -508,23 +515,22 @@ body {
 
 @media only screen and (max-width: 685px) {
   .newbook__form {
-    width: 80%;
+    width: 82%;
     min-width: 350px;
-    overflow: hidden;
-
   }
 
   .newbook__form-input {
-    font-size: 4rem;
+    font-size: 3.9rem;
   }
 
   .newbook__form-input::-webkit-input-placeholder {
-    font-size: 3.3rem;
+    font-size: 3.2rem;
   }
 
   .newbook__form-radio-label--yes,
   .newbook__form-radio-label--no {
-    font-size: 3.2rem;
+    font-size: 3.1rem;
+    display: block;
   }
 }
 
