@@ -182,8 +182,9 @@ body {
 .newbook__form-container {
   height: 100vh;
   position: fixed;
+  
   top: 15rem;
-  left: 0;
+  left: -50rem;
   z-index: 1500;
   width: 0;
   opacity: 0;
@@ -199,6 +200,7 @@ body {
 .newbook__checkbox:checked ~ .newbook__form-container {
   opacity: 1;
   width: 100%;
+  left: 0rem;
 }
 
 /* ICON */
