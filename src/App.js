@@ -18,7 +18,8 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-      <div className="top-bar"></div>
+      <div className="top-bar">
+      </div>
       <section className="main-container">
       
         <h1 className="main-header">React Read List</h1>
@@ -28,9 +29,9 @@ class App extends Component {
           handleBookReadToggle={this.handleBookReadToggle}
           books={this.state.books} 
         />
-      
       </section>
-      <div className="bottom-bar">
+      <div className="bottom-bar"></div>
+      <div className="bottom-nav">
         <a href="http://www.javiermachin.com">© Javier Machín</a>
       </div>
       </React.Fragment>
