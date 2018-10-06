@@ -495,7 +495,7 @@ body {
   }
 
   .newbook__form-header {
-    margin-bottom: 1.5rem;
+    display: none;
   }
 
   .newbook__form-input {
