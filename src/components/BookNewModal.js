@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../css/BookNewModal.css';
 import BookForm from './BookForm';
 
 class BookNewModal extends Component {
